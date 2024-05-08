@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { FormEvent, useEffect, useState } from "react"
 import { AiOutlineSearch } from "react-icons/ai"
 import { URL_ENDPOINT } from "../api/API"
 import axios from "axios"
@@ -35,10 +35,20 @@ const WeatherData = () => {
 		fetchUserLocation()
 	}, [])
 
+	const handleSubmit = (e: FormEvent) => {
+		e.preventDefault()
+		if (!searchCity.trim().length) {
+			return
+		} else {
+			fetchUserLocation(searchCity)
+			setSearchCity("")
+		}
+	}
+
 	return (
 		<div className="py-5 w-[min(90%,500px)] mt-10 text-center shadow-md rounded-lg bg-[#ffffff7d]">
 			<div>
-				<form className="w-[90%] mx-auto flex justify-center items-center gap-5">
+				<form onSubmit={handleSubmit} className="w-[90%] mx-auto flex justify-center items-center gap-5">
 					<input
 						type="text"
 						placeholder="search city"
