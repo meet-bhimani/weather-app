@@ -36,7 +36,7 @@ const WeatherData = () => {
 	}, [])
 
 	return (
-		<div className="py-5 w-[min(90%,500px)] mt-10 text-center shadow rounded-md bg-[#ffffff7d]">
+		<div className="py-5 w-[min(90%,500px)] mt-10 text-center shadow-md rounded-lg bg-[#ffffff7d]">
 			<div>
 				<form className="w-[90%] mx-auto flex justify-center items-center gap-5">
 					<input
@@ -51,7 +51,7 @@ const WeatherData = () => {
 					</button>
 				</form>
 
-				<div className="mt-5 w-full min-h-[250px] grid place-items-center">
+				<div className="mt-5 w-full min-h-[250px] grid place-items-center px-5">
 					{isLoading ? (
 						<div className="grid place-items-center">
 							<FiLoader className="text-3xl animate-rotate mb-2" />

@@ -9,9 +9,12 @@ export default {
 					"100%": { transform: "rotate(360deg)" },
 				},
 			},
-		},
-		animation: {
-			rotate: "rotate 1.5s linear infinite",
+			animation: {
+				rotate: "rotate 1.5s linear infinite",
+			},
+			screens: {
+				xsm: "420px",
+			},
 		},
 	},
 	plugins: [],
